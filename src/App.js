@@ -97,6 +97,7 @@ function Skills() {
     "Premiere Pro",
     "Inkscape",
     "Blender",
+    "Figma",
   ];
 
   return (
