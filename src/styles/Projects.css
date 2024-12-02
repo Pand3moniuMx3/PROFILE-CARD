@@ -1,0 +1,69 @@
+.projects-component {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--global-gap);
+}
+
+/* PROJECT */
+
+.projects-component .project {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: var(--inner-gap);
+  padding: var(--global-padding);
+  border: 1px solid var(--clr-light);
+  border-radius: var(--border-radius);
+}
+
+/* DATA */
+
+.projects-component .project .data {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: var(--inner-gap);
+}
+
+/* TECH */
+
+.projects-component .project .data .tech {
+  display: flex;
+  align-items: center;
+  gap: var(--inner-gap);
+  white-space: nowrap;
+}
+.projects-component .project .data .tech .marker {
+  width: 12px;
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 50%;
+}
+
+/* LINK */
+
+.projects-component .project .data .link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.projects-component .project .data .link p {
+  color: var(--clr-black);
+}
+.projects-component .project .data .link img {
+  max-width: 20px;
+  transition: var(--transition);
+}
+.projects-component .project .data .link:hover {
+  gap: 10px;
+}
+.projects-component .project .data .link:hover img {
+  transform: rotate(45deg);
+}

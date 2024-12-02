@@ -1,0 +1,19 @@
+.skills-component .skills-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--inner-gap);
+}
+.skills-component .skills-wrapper .skill {
+  padding: 2px 15px;
+  font-size: 14px;
+  background: #f0f1f2;
+  border: none;
+  border-radius: 20px;
+  flex-grow: 1;
+  transition: var(--transition);
+  user-select: none;
+}
+.skills-component .skills-wrapper .skill:hover {
+  padding: 2px 17px;
+  color: var(--clr-black);
+}
