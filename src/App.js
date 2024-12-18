@@ -178,6 +178,13 @@ function Projects() {
     },
     {
       id: 6,
+      title: "Checklist App",
+      description: "Minimalist checklist app built using React.js",
+      tech: "React",
+      url: "https://checklist-project.netlify.app/",
+    },
+    {
+      id: 7,
       title: "Offer for Inwest Mart",
       description:
         "Large-scale website offer for a railroad and real estate construction company.",
@@ -185,7 +192,7 @@ function Projects() {
       url: "https://inwestmartoferta.netlify.app/",
     },
     {
-      id: 7,
+      id: 8,
       title: "Appreciation Course",
       description:
         "Landing page for an English course about appreciation at the workplace",
@@ -193,7 +200,7 @@ function Projects() {
       url: "https://skills.thebluetree.pl/appreciation/",
     },
     {
-      id: 8,
+      id: 9,
       title: "LearnJS Hub",
       description:
         "An educational hub with resources and lessons for people interested in learning JS frameworks.",
@@ -201,7 +208,7 @@ function Projects() {
       url: "https://learnjshub.netlify.app/",
     },
     {
-      id: 9,
+      id: 10,
       title: "SRG Media",
       description:
         "Business site for a remote SEO agency in Warsaw. My first ever website.",
@@ -209,7 +216,7 @@ function Projects() {
       url: "https://en.srgmedia.com.pl/",
     },
     {
-      id: 10,
+      id: 11,
       title: "Mateusz Mirecki Porftolio",
       description:
         "My full portfolio, containing all projects and extended information about my qualifications.",
