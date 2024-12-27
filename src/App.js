@@ -217,6 +217,14 @@ function Projects() {
     },
     {
       id: 11,
+      title: "Eat-Split-Repeat",
+      description:
+        "Modern React web application for easily splitting the bill while going out with friends.",
+      tech: "React",
+      url: "https://eat-split-repeat.netlify.app/",
+    },
+    {
+      id: 12,
       title: "Mateusz Mirecki Porftolio",
       description:
         "My full portfolio, containing all projects and extended information about my qualifications.",
