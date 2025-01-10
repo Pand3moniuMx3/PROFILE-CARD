@@ -134,10 +134,12 @@ function About() {
   );
 }
 
+const generateRandomId = () => Math.floor(100000 + Math.random() * 900000);
+
 function Projects() {
   const projects = [
     {
-      id: 1,
+      id: generateRandomId(),
       title: "Vaporify",
       description:
         "Modern vape shop inspired on Canyon's website. Made with HTML, CSS and vanilla JavaScript.",
@@ -145,7 +147,7 @@ function Projects() {
       url: "https://vaporify.onrender.com/",
     },
     {
-      id: 2,
+      id: generateRandomId(),
       title: "Polbi",
       description:
         "Polish training company offering a variety of courses and trainings for accountants, IT specialists, etc.",
@@ -153,7 +155,15 @@ function Projects() {
       url: "https://www.polbi.pl/",
     },
     {
-      id: 3,
+      id: generateRandomId(),
+      title: "My Movie List",
+      description:
+        "Single-page application for adding movies to your 'watched' checklist.",
+      tech: "React",
+      url: "https://react-app-my-movie-list.netlify.app/",
+    },
+    {
+      id: generateRandomId(),
       title: "Oversee",
       description:
         "Small company offering facility management and internet marketing services for summer houses and resorts.",
@@ -161,7 +171,7 @@ function Projects() {
       url: "https://pand3moniumx3.github.io/OverSEE/",
     },
     {
-      id: 4,
+      id: generateRandomId(),
       title: "Czytaj Mądrze",
       description:
         "Family blog for spreading awareness about the best self-improvement authors and literature",
@@ -169,7 +179,7 @@ function Projects() {
       url: "https://czytajmadrze.pl/",
     },
     {
-      id: 5,
+      id: generateRandomId(),
       title: "Smegma",
       description:
         "Modern e-commerce store for a company selling energy drinks and gym suppliments for lifters.",
@@ -177,14 +187,14 @@ function Projects() {
       url: "https://pand3moniumx3.github.io/SMEGMA/",
     },
     {
-      id: 6,
+      id: generateRandomId(),
       title: "Checklist App",
       description: "Minimalist checklist app built using React.js",
       tech: "React",
       url: "https://checklist-project.netlify.app/",
     },
     {
-      id: 7,
+      id: generateRandomId(),
       title: "Offer for Inwest Mart",
       description:
         "Large-scale website offer for a railroad and real estate construction company.",
@@ -192,7 +202,7 @@ function Projects() {
       url: "https://inwestmartoferta.netlify.app/",
     },
     {
-      id: 8,
+      id: generateRandomId(),
       title: "Appreciation Course",
       description:
         "Landing page for an English course about appreciation at the workplace",
@@ -200,7 +210,7 @@ function Projects() {
       url: "https://skills.thebluetree.pl/appreciation/",
     },
     {
-      id: 9,
+      id: generateRandomId(),
       title: "LearnJS Hub",
       description:
         "An educational hub with resources and lessons for people interested in learning JS frameworks.",
@@ -208,7 +218,7 @@ function Projects() {
       url: "https://learnjshub.netlify.app/",
     },
     {
-      id: 10,
+      id: generateRandomId(),
       title: "SRG Media",
       description:
         "Business site for a remote SEO agency in Warsaw. My first ever website.",
@@ -216,7 +226,7 @@ function Projects() {
       url: "https://en.srgmedia.com.pl/",
     },
     {
-      id: 11,
+      id: generateRandomId(),
       title: "Eat-Split-Repeat",
       description:
         "Modern React web application for easily splitting the bill while going out with friends.",
@@ -224,7 +234,7 @@ function Projects() {
       url: "https://eat-split-repeat.netlify.app/",
     },
     {
-      id: 12,
+      id: generateRandomId(),
       title: "Mateusz Mirecki Porftolio",
       description:
         "My full portfolio, containing all projects and extended information about my qualifications.",
@@ -233,7 +243,7 @@ function Projects() {
     },
   ];
 
-  const shortArray = projects.filter((project) => project.id <= 4);
+  const shortArray = projects.slice(0, 4);
 
   const [isExpanded, setIsExpanded] = useState(false);
 
