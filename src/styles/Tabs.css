@@ -1,0 +1,29 @@
+.tab-container {
+  width: min(var(--content-width), 90vw);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  border: 1px solid var(--clr-light);
+  border-radius: var(--border-radius);
+  position: relative;
+}
+.tab-container .tab {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  z-index: 1;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* MARKER */
+
+.tab-container .tab-indicator {
+  position: absolute;
+  background: var(--clr-light);
+  border: none;
+  border-radius: calc(var(--border-radius) - 6px);
+  transition: var(--transition);
+  z-index: 0;
+}

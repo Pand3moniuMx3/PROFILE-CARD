@@ -42,6 +42,9 @@
   border: none;
   border-radius: 50%;
 }
+.projects-component .project .data .tech img {
+  width: 20px;
+}
 
 /* LINK */
 
