@@ -1,0 +1,78 @@
+{
+  "text": {
+    "role": "Freelance Motion Graphic Designer",
+    "description": "Motion graphics and SFX designer. My goal is to infuse motion graphics with minimalistic beauty that satisfies the eye."
+  },
+  "projects": [
+    {
+      "id": "1",
+      "title": "Cyrima instruction videos",
+      "description": "A series of videos explaining how to use Cyrima - a software tool for carrying out large web projects securely",
+      "tech": ["/icons/ae-icon.png", "/icons/pr-icon.png"],
+      "url": "https://youtu.be/Jni_aPRjyD4"
+    },
+    {
+      "id": "2",
+      "title": "Lyrical video (Yeat)",
+      "description": "Lyrical music video for the song 'Up Off X' by Yeat",
+      "tech": ["/icons/ae-icon.png", "/icons/blender-icon.png"],
+      "url": "https://www.instagram.com/p/Cz_l_Ervaml/"
+    },
+    {
+      "id": "3",
+      "title": "Lyrical video (DDG)",
+      "description": "Lyrical music video for the song 'I'm Geekin' by DDG",
+      "tech": ["/icons/ae-icon.png"],
+      "url": "https://youtu.be/I9IRee4gVRI"
+    },
+    {
+      "id": "4",
+      "title": "Lyrical video (Robotaki)",
+      "description": "Lyrical music video for the song 'Holding On' by Robotaki",
+      "tech": ["/icons/ae-icon.png", "/icons/inkscape-icon.png"],
+      "url": "https://youtu.be/c4WNjpzA6F8"
+    },
+    {
+      "id": "5",
+      "title": "Lyrical video (Juice WRLD)",
+      "description": "Lyrical music video for the song 'Lucid Dreams' by Juice WRLD",
+      "tech": ["/icons/ae-icon.png", "/icons/inkscape-icon.png"],
+      "url": "https://youtu.be/YmpqK7IURSM"
+    }
+  ],
+  "skills": ["After Effects", "Premiere Pro", "Inkscape", "Blender", "Figma"],
+  "referrals": [
+    {
+      "id": "1",
+      "company": "After Effects",
+      "companyLogo": "/images/after-effects-logo.png",
+      "position": "Music Video Animator",
+      "timeframe": "Dec 2022 - Nov 2024",
+      "referral": "The beginning of my animation journey. This is when I started experimenting with different technologies and perfected motion graphics with After Effects.",
+      "examples": [
+        {
+          "img": "/images/animations/juice-wrld-lv.png",
+          "url": "https://youtu.be/YmpqK7IURSM"
+        },
+        {
+          "img": "/images/animations/robotaki-lv.png",
+          "url": "https://youtu.be/c4WNjpzA6F8"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "company": "Cyrima",
+      "companyLogo": "/images/cyrima-logo.png",
+      "position": "Contractor",
+      "timeframe": "Nov 2024 - Jan 2025",
+      "referral": "'Mateusz did an amazing job! He delivered great animations and had no issues with all of our requests. The job went smoothly with no delays. We greatly recommend him.'",
+      "examples": [
+        {
+          "img": "/images/animations/cyrima-vid.png",
+          "link": "https://youtu.be/Jni_aPRjyD4"
+        }
+      ]
+    }
+  ]
+}

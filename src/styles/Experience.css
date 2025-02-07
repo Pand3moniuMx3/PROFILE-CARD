@@ -57,6 +57,7 @@
   margin-top: var(--inner-gap);
 }
 .experience-component .referral .website-screens .ss-wrapper {
+  display: flex;
   overflow: hidden;
   border: 1px solid var(--clr-light);
   border-radius: var(--border-radius);

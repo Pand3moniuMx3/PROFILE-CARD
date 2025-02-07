@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import "./App.css";
 import "./styles/Profile.css";
 import "./styles/Skills.css";
 import "./styles/Projects.css";
 import "./styles/Experience.css";
 import "./styles/Tabs.css";
-
-const generateRandomId = () => Math.floor(100000 + Math.random() * 900000);
+import devData from "./data/dev.json";
+import animatorData from "./data/animator.json";
+import { useId } from "./context/IdContext";
 
 const tabs = [
   {
@@ -19,279 +20,28 @@ const tabs = [
   },
 ];
 
-const webDev = {
-  text: {
-    role: "Solopreneur Web Developer",
-    description:
-      "Web Developer and UI Designer on a mission to say no to boring websites and fill the digital landscape with beauty that converts.",
-  },
-  projects: [
-    {
-      id: generateRandomId(),
-      title: "Vaporify",
-      description:
-        "Modern vape shop inspired on Canyon's website. Made with HTML, CSS and vanilla JavaScript.",
-      tech: "HTML",
-      url: "https://vaporify.onrender.com/",
-    },
-    {
-      id: generateRandomId(),
-      title: "Polbi",
-      description:
-        "Polish training company offering a variety of courses and trainings for accountants, IT specialists, etc.",
-      tech: "React",
-      url: "https://www.polbi.pl/",
-    },
-    {
-      id: generateRandomId(),
-      title: "My Movie List",
-      description:
-        "Single-page application for adding movies to your 'watched' checklist.",
-      tech: "React",
-      url: "https://react-app-my-movie-list.netlify.app/",
-    },
-    {
-      id: generateRandomId(),
-      title: "Oversee",
-      description:
-        "Small company offering facility management and internet marketing services for summer houses and resorts.",
-      tech: "HTML",
-      url: "https://pand3moniumx3.github.io/OverSEE/",
-    },
-    {
-      id: generateRandomId(),
-      title: "Czytaj Mądrze",
-      description:
-        "Family blog for spreading awareness about the best self-improvement authors and literature",
-      tech: "WordPress",
-      url: "https://czytajmadrze.pl/",
-    },
-    {
-      id: generateRandomId(),
-      title: "Smegma",
-      description:
-        "Modern e-commerce store for a company selling energy drinks and gym suppliments for lifters.",
-      tech: "CSS",
-      url: "https://pand3moniumx3.github.io/SMEGMA/",
-    },
-    {
-      id: generateRandomId(),
-      title: "Checklist App",
-      description: "Minimalist checklist app built using React.js",
-      tech: "React",
-      url: "https://checklist-project.netlify.app/",
-    },
-    {
-      id: generateRandomId(),
-      title: "Offer for Inwest Mart",
-      description:
-        "Large-scale website offer for a railroad and real estate construction company.",
-      tech: "React",
-      url: "https://inwestmartoferta.netlify.app/",
-    },
-    {
-      id: generateRandomId(),
-      title: "Appreciation Course",
-      description:
-        "Landing page for an English course about appreciation at the workplace",
-      tech: "WordPress",
-      url: "https://skills.thebluetree.pl/appreciation/",
-    },
-    {
-      id: generateRandomId(),
-      title: "LearnJS Hub",
-      description:
-        "An educational hub with resources and lessons for people interested in learning JS frameworks.",
-      tech: "React",
-      url: "https://learnjshub.netlify.app/",
-    },
-    {
-      id: generateRandomId(),
-      title: "SRG Media",
-      description:
-        "Business site for a remote SEO agency in Warsaw. My first ever website.",
-      tech: "React",
-      url: "https://en.srgmedia.com.pl/",
-    },
-    {
-      id: generateRandomId(),
-      title: "Eat-Split-Repeat",
-      description:
-        "Modern React web application for easily splitting the bill while going out with friends.",
-      tech: "React",
-      url: "https://eat-split-repeat.netlify.app/",
-    },
-    {
-      id: generateRandomId(),
-      title: "Mateusz Mirecki Porftolio",
-      description:
-        "My full portfolio, containing all projects and extended information about my qualifications.",
-      tech: "React",
-      url: "https://mateuszmirecki.netlify.app/",
-    },
-  ],
-  skills: [
-    "WordPress",
-    "Divi",
-    "Elementor",
-    "React",
-    "React Three Fiber",
-    "HTML & CSS",
-    "Javascript",
-  ],
-  referrals: [
-    {
-      id: 1,
-      company: "SRG Media",
-      companyLogo: "/images/srgmedia-logo.png",
-      position: "SEO Consultant & Owner",
-      timeframe: "Dec 2022 - Oct 2023",
-      referral:
-        "First steps in my web development journey. I developed a strong interest for learning, coding and web design. Improved as a WordPress Developer.",
-      examples: [
-        {
-          img: "/images/pages/srgmedia-ss.png",
-          url: "https://en.srgmedia.com.pl/",
-        },
-        {
-          img: "/images/pages/appreciation-ss.png",
-          url: "https://skills.thebluetree.pl/appreciation/",
-        },
-      ],
-    },
-    {
-      id: 2,
-      company: "Polbi",
-      companyLogo: "/images/polbi-logo.jpg",
-      position: "SEO Consultant",
-      timeframe: "Dec 2023 - Apr 2024",
-      referral:
-        "'Mateusz delivered high quality SEO services and helped with updating our website to comply with modern standards. No problem with meeting deadlines and complex requirements.'",
-      examples: [
-        {
-          img: "/images/pages/polbi-ss.png",
-          link: "https://www.polbi.pl/",
-        },
-      ],
-    },
-    {
-      id: 3,
-      company: "React",
-      companyLogo: "/images/react-logo.png",
-      position: "Freelance Developer",
-      timeframe: "Apr 2024 - Present",
-      referral:
-        "Develop and design new or modernise existing web applications for clients, applying advanced skills in multiple web development tools and programming languages.",
-      examples: [
-        {
-          img: "/images/pages/vaporify-ss.png",
-          url: "https://vaporify.onrender.com/",
-        },
-        {
-          img: "/images/pages/oversee-ss.png",
-          url: "https://pand3moniumx3.github.io/OverSEE/",
-        },
-        {
-          img: "images/pages/inwestmartoferta-ss.png",
-          url: "https://inwestmartoferta.netlify.app/",
-        },
-      ],
-    },
-  ],
-};
-
-const animator = {
-  text: {
-    role: "Freelance Motion Graphic Designer",
-    description:
-      "Motion graphics and SFX designer. My goal is to infuse motion graphics with minimalistic beauty that satisfies the eye.",
-  },
-  projects: [
-    {
-      id: generateRandomId(),
-      title: "Cyrima instruction videos",
-      description:
-        "A series of videos explaining how to use Cyrima - a software tool for carrying out large web projects securely",
-      tech: ["/icons/ae-icon.png", "/icons/pr-icon.png"],
-      url: "https://youtu.be/Jni_aPRjyD4",
-    },
-    {
-      id: generateRandomId(),
-      title: "Lyrical video (Yeat)",
-      description: "Lyrical music video for the song 'Up Off X' by Yeat",
-      tech: ["/icons/ae-icon.png", "/icons/blender-icon.png"],
-      url: "https://www.instagram.com/p/Cz_l_Ervaml/",
-    },
-    {
-      id: generateRandomId(),
-      title: "Lyrical video (DDG)",
-      description: "Lyrical music video for the song 'I'm Geekin' by DDG",
-      tech: ["/icons/ae-icon.png"],
-      url: "https://youtu.be/I9IRee4gVRI",
-    },
-    {
-      id: generateRandomId(),
-      title: "Lyrical video (Robotaki)",
-      description: "Lyrical music video for the song 'Holding On' by Robotaki",
-      tech: ["/icons/ae-icon.png", "/icons/inkscape-icon.png"],
-      url: "https://youtu.be/c4WNjpzA6F8",
-    },
-    {
-      id: generateRandomId(),
-      title: "Lyrical video (Juice WRLD)",
-      description:
-        "Lyrical music video for the song 'Lucid Dreams' by Juice WRLD",
-      tech: ["/icons/ae-icon.png", "/icons/inkscape-icon.png"],
-      url: "https://youtu.be/YmpqK7IURSM",
-    },
-  ],
-  skills: ["After Effects", "Premiere Pro", "Inkscape", "Blender", "Figma"],
-  referrals: [
-    {
-      id: 1,
-      company: "After Effects",
-      companyLogo: "/images/after-effects-logo.png",
-      position: "Music Video Animator",
-      timeframe: "Dec 2022 - Nov 2024",
-      referral:
-        "The beginning of my animation journey. This is when I started experimenting with different technologies and perfected motion graphics with After Effects.",
-      examples: [
-        {
-          img: "/images/animations/juice-wrld-lv.png",
-          url: "https://youtu.be/YmpqK7IURSM",
-        },
-        {
-          img: "/images/animations/robotaki-lv.png",
-          url: "https://youtu.be/c4WNjpzA6F8",
-        },
-      ],
-    },
-    {
-      id: 2,
-      company: "Cyrima",
-      companyLogo: "/images/cyrima-logo.png",
-      position: "Contractor",
-      timeframe: "Nov 2024 - Jan 2025",
-      referral:
-        "'Mateusz did an amazing job! He delivered great animations and had no issues with all of our requests. The job went smoothly with no delays. We greatly recommend him.'",
-      examples: [
-        {
-          img: "/images/animations/cyrima-vid.png",
-          link: "https://youtu.be/Jni_aPRjyD4",
-        },
-      ],
-    },
-  ],
-};
-
 export default function App() {
+  const { generateUniqueId } = useId();
+
   const [activeTab, setActiveTab] = useState(1);
 
   let array;
   if (activeTab === 1) {
-    array = webDev;
+    array = {
+      ...devData,
+      projects: devData.projects.map((project) => ({
+        ...project,
+        id: generateUniqueId(),
+      })),
+    };
   } else if (activeTab === 2) {
-    array = animator;
+    array = {
+      ...animatorData,
+      projects: animatorData.projects.map((project) => ({
+        ...project,
+        id: generateUniqueId(),
+      })),
+    };
   }
 
   return (
@@ -335,6 +85,41 @@ export default function App() {
 }
 
 function Profile({ text }) {
+  const initialState = {
+    status: "missing",
+    name: "",
+    email: "",
+    request: "",
+  };
+
+  function reducer(state, action) {
+    switch (action.type) {
+      case "set/name":
+        return {
+          ...state,
+          name: action.payload,
+        };
+      case "set/email":
+        return {
+          ...state,
+          email: action.payload,
+        };
+      case "set/request":
+        return {
+          ...state,
+          request: action.payload,
+        };
+      case "input/complete":
+        return {
+          ...state,
+          status: "complete",
+        };
+      default:
+        throw new Error("undefined action");
+    }
+  }
+
+  // socials array
   const contact = [
     {
       id: 1,
@@ -356,36 +141,105 @@ function Profile({ text }) {
     },
   ];
 
-  return (
-    <div className="profile-component component flex">
-      <div className="img-wrapper">
-        <img
-          src="images/pfp.jpg"
-          alt="Me, sitting on a mountain near Passe Giau, Italy"
-        />
-      </div>
-      <div className="info-wrapper">
-        <h2>Mateusz Mirecki</h2>
-        <p>{text.role}</p>
-        <p>{text.description}</p>
-        <a
-          className="btn"
-          style={{ width: "100%", marginTop: "var(--inner-gap)" }}
-          href="https://mateuszmirecki.netlify.app/contact"
-        >
-          Contact me
-        </a>
-      </div>
-      <div className="contact-wrapper">
-        {contact.map((contact) => (
-          <div className="contact" key={contact.id}>
-            <img src={contact.icon} alt={contact.title} />
-            <p>{contact.at}</p>
-          </div>
-        ))}
-      </div>
-    </div>
+  // contact tab toggle logic
+  const [isContactOpen, setIsContactOpen] = useState(false);
+  const handleToggleContact = () => {
+    setIsContactOpen((s) => !s);
+  };
+
+  // input state
+  const [{ status, name, email, request }, dispatch] = useReducer(
+    reducer,
+    initialState
   );
+
+  useEffect(() => {
+    name && email && request && dispatch({ type: "input/complete" });
+  }, [name, email, request]);
+
+  if (!isContactOpen)
+    return (
+      <div className="profile-component component flex">
+        <div className="img-wrapper">
+          <img
+            src="images/pfp.jpg"
+            alt="Me, sitting on a mountain near Passe Giau, Italy"
+          />
+        </div>
+        <div className="info-wrapper">
+          <h2>Mateusz Mirecki</h2>
+          <p>{text.role}</p>
+          <p>{text.description}</p>
+          <button
+            className="btn"
+            style={{ width: "100%", marginTop: "var(--inner-gap)" }}
+            onClick={handleToggleContact}
+          >
+            Contact me
+          </button>
+        </div>
+        <div className="contact-wrapper">
+          {contact.map((contact) => (
+            <div className="contact" key={contact.id}>
+              <img src={contact.icon} alt={contact.title} />
+              <p>{contact.at}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+
+  if (isContactOpen)
+    return (
+      <form
+        className="profile-component component flex"
+        action="https://api.web3forms.com/submit"
+        method="POST"
+      >
+        <input
+          type="hidden"
+          name="access_key"
+          value="2529292a-9240-45fa-99a3-ad34bca3a1c8"
+        ></input>
+        <input
+          type="text"
+          placeholder="Name"
+          name="name"
+          value={name}
+          onChange={(e) =>
+            dispatch({ type: "set/name", payload: e.target.value })
+          }
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          name="email"
+          value={email}
+          onChange={(e) =>
+            dispatch({ type: "set/email", payload: e.target.value })
+          }
+        />
+        <textarea
+          placeholder="Describe your request..."
+          name="request"
+          value={request}
+          onChange={(e) =>
+            dispatch({ type: "set/request", payload: e.target.value })
+          }
+        />
+        <div className="contact-btns">
+          <span className="return-btn" onClick={handleToggleContact}>
+            <img src="/icons/return-icon.svg" alt="go back" />
+          </span>
+          <button
+            type="submit"
+            className={`btn ${status === "missing" && "blocked"}`}
+          >
+            SEND
+          </button>
+        </div>
+      </form>
+    );
 }
 
 function Skills({ skills }) {

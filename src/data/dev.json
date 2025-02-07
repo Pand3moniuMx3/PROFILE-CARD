@@ -1,0 +1,127 @@
+{
+  "text": {
+    "role": "Solopreneur Web Developer",
+    "description": "Web Developer and UI Designer on a mission to say no to boring websites and fill the digital landscape with beauty that converts."
+  },
+  "projects": [
+    {
+      "title": "Vaporify",
+      "description": "Modern vape shop inspired on Canyon's website. Made with HTML, CSS and vanilla JavaScript.",
+      "tech": "JavaScript",
+      "url": "https://vaporify.onrender.com/"
+    },
+    {
+      "title": "Polbi",
+      "description": "Polish training company offering a variety of courses and trainings for accountants, IT specialists, etc.",
+      "tech": "React",
+      "url": "https://www.polbi.pl/"
+    },
+    {
+      "title": "My Movie List",
+      "description": "Single-page application for adding movies to your 'watched' checklist.",
+      "tech": "React",
+      "url": "https://react-app-my-movie-list.netlify.app/"
+    },
+    {
+      "title": "Oversee",
+      "description": "Small company offering facility management and internet marketing services for summer houses and resorts.",
+      "tech": "HTML",
+      "url": "https://pand3moniumx3.github.io/OverSEE/"
+    },
+    {
+      "title": "Monochromatic React",
+      "description": "Free knowledge hub for learning React. Based on my notes.",
+      "tech": "React",
+      "url": "https://monochromaticreact.netlify.app/"
+    },
+    {
+      "title": "Smegma",
+      "description": "Modern e-commerce store for a company selling energy drinks and gym supplements for lifters.",
+      "tech": "CSS",
+      "url": "https://pand3moniumx3.github.io/SMEGMA/"
+    },
+    {
+      "title": "Offer for Inwest Mart",
+      "description": "Large-scale website offer for a railroad and real estate construction company.",
+      "tech": "React",
+      "url": "https://inwestmartoferta.netlify.app/"
+    },
+    {
+      "title": "Appreciation Course",
+      "description": "Landing page for an English course about appreciation at the workplace",
+      "tech": "WordPress",
+      "url": "https://skills.thebluetree.pl/appreciation/"
+    },
+    {
+      "title": "SRG Media",
+      "description": "Business site for a remote SEO agency in Warsaw. My first ever website.",
+      "tech": "WordPress",
+      "url": "https://en.srgmedia.com.pl/"
+    }
+  ],
+  "skills": [
+    "WordPress",
+    "Divi",
+    "Elementor",
+    "React",
+    "React Three Fiber",
+    "HTML & CSS",
+    "Javascript"
+  ],
+  "referrals": [
+    {
+      "id": 1,
+      "company": "SRG Media",
+      "companyLogo": "/images/srgmedia-logo.png",
+      "position": "SEO Consultant & Owner",
+      "timeframe": "Dec 2022 - Oct 2023",
+      "referral": "First steps in my web development journey. I developed a strong interest for learning, coding and web design. Improved as a WordPress Developer.",
+      "examples": [
+        {
+          "img": "/images/pages/srgmedia-ss.png",
+          "url": "https://en.srgmedia.com.pl/"
+        },
+        {
+          "img": "/images/pages/appreciation-ss.png",
+          "url": "https://skills.thebluetree.pl/appreciation/"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "company": "Polbi",
+      "companyLogo": "/images/polbi-logo.jpg",
+      "position": "SEO Consultant",
+      "timeframe": "Dec 2023 - Apr 2024",
+      "referral": "'Mateusz delivered high quality SEO services and helped with updating our website to comply with modern standards. No problem with meeting deadlines and complex requirements.'",
+      "examples": [
+        {
+          "img": "/images/pages/polbi-ss.png",
+          "link": "https://www.polbi.pl/"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "company": "React",
+      "companyLogo": "/images/react-logo.png",
+      "position": "Freelance Developer",
+      "timeframe": "Apr 2024 - Present",
+      "referral": "Develop and design new or modernise existing web applications for clients, applying advanced skills in multiple web development tools and programming languages.",
+      "examples": [
+        {
+          "img": "/images/pages/vaporify-ss.png",
+          "url": "https://vaporify.onrender.com/"
+        },
+        {
+          "img": "/images/pages/oversee-ss.png",
+          "url": "https://pand3moniumx3.github.io/OverSEE/"
+        },
+        {
+          "img": "images/pages/inwestmartoferta-ss.png",
+          "url": "https://inwestmartoferta.netlify.app/"
+        }
+      ]
+    }
+  ]
+}

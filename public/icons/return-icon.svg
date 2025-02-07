@@ -1,0 +1,6 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Mid Return Icon">
+<path id="ArrowBody" d="M2.5 5.5H9H11C12.933 5.5 14.5 7.067 14.5 9V9C14.5 10.933 12.933 12.5 11 12.5H9H8H4.5" stroke="black" stroke-linecap="round"/>
+<path id="ArrowPoint" d="M4.5 3L2 5.5L4.5 8" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>
