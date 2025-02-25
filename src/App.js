@@ -139,6 +139,12 @@ function Profile({ text }) {
       at: "mateusz-mirecki",
       icon: "/images/linkedin-icon.png",
     },
+    {
+      id: 4,
+      title: "Gmail",
+      at: "srgmedia.agency@gmail.com",
+      icon: "/images/gmail-icon.png",
+    },
   ];
 
   // contact tab toggle logic
@@ -156,6 +162,14 @@ function Profile({ text }) {
   useEffect(() => {
     name && email && request && dispatch({ type: "input/complete" });
   }, [name, email, request]);
+
+  // copying to clipboard
+  const [justCopied, setJustCopied] = useState("");
+  function copyToClipboard(info) {
+    navigator.clipboard.writeText(info);
+    setJustCopied(info);
+    setTimeout(() => setJustCopied(""), 3000);
+  }
 
   if (!isContactOpen)
     return (
@@ -180,9 +194,13 @@ function Profile({ text }) {
         </div>
         <div className="contact-wrapper">
           {contact.map((contact) => (
-            <div className="contact" key={contact.id}>
+            <div
+              className="contact"
+              key={contact.id}
+              onClick={() => copyToClipboard(contact.at)}
+            >
               <img src={contact.icon} alt={contact.title} />
-              <p>{contact.at}</p>
+              <p>{justCopied === contact.at ? "copied" : contact.at}</p>
             </div>
           ))}
         </div>
